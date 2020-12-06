@@ -77,8 +77,27 @@ export function addStudent(studentData){
 
 }
 
-
-
 export function getMyName(){
     return mySecretName;
 }
+
+//view
+export function getView(viewName){
+    $.get(`views/${viewName}/${viewName}.html`, function (data){ //template literal is backtick, `, to the left of 1 key.
+            $("#app").html(data);
+    });
+}
+
+// var MODEL = (function (){
+//     //represents getting information from the database
+//     var _getView = function(viewName){
+//         $.get(`views/${viewName}/${viewName}.html`, function (data){ //template literal is backtick, `, to the left of 1 key.
+//             $("#app").html(data);
+//         });
+//     };
+    
+    
+//     return{
+//         getView: _getView,
+//     }
+//     })();
